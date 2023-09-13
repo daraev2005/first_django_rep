@@ -1,0 +1,23 @@
+{% extends 'todos/main_temp.html' %}
+
+
+{% block title %}Add a category{% endblock %}
+
+
+{% block content %}
+        <div class="content-add-cat">
+              
+        	<form method="post">
+        		{% csrf_token %}
+                        <div class="form-error">{{ form.non_field_errors }}</div>
+
+                        <div class="add-edit">
+                              <h3 class="action_title" id="add_edit_title"> <i class="bi bi-bookmark-plus"></i> Adding a category</h3>  
+        		      {{ form.name }}
+                              {{ form.slug }}
+                              <a href="{% url 'predelete_cat' %}"> If you need to delete a category click here </a> 
+        		      <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+        	</form>
+        </div>
+{% endblock %}

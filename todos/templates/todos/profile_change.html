@@ -1,0 +1,19 @@
+{% extends 'todos/profile_data.html' %}
+
+{% block profile-content %}
+	<div class="profile-edit">
+		<form method="post">
+			<h2>Edit Profile</h2>
+			{% csrf_token %}
+			<div>
+				<i class="bi bi-person-fill"></i>{{ form.username.label_tag }}
+			</div>
+			{{ form.username }}<br>
+			<div>
+				<i class="bi bi-envelope-at-fill"></i>{{ form.email.label_tag }}
+			</div>
+    		{{ form.email }}<br>
+			<button class="btn btn-primary" type="submit">Save</button>
+		</form>
+	</div>
+{% endblock %}

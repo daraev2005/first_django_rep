@@ -1,0 +1,523 @@
+body { 
+    background: linear-gradient(to bottom,#FFFFFF , #78DBE2 40%);
+    min-height: 1000px;
+}
+
+
+/* Начало работы над хедером всех страниц */
+
+.header {
+    margin-top: 8px;
+    margin-right: 12px;
+    margin-left: 12px; 
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    background: #87CEEB;
+    
+}
+
+
+h2 {
+    margin-left: 8px;
+    font-size: 31px;
+}
+
+
+.top-left-menu  {
+    display: flex; 
+    align-items: center;
+}
+
+.top-left-menu a {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+ 
+.top-left-menu a:hover {
+    color: #0d6efd;
+}
+
+.top-left-menu a img {
+    width: 50px;
+    height: 50px;
+}
+
+.right-link {
+    margin-left: 20px;
+}
+
+
+.header ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header li {
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.header button {
+  margin-left: 20px; 
+}
+
+
+/* Конец */
+
+
+
+
+/* Блок с задачами - пагинацией */
+
+.left-content {
+    width: 860px;
+}
+
+.paginate-menu {
+    border-radius: 10px;
+
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginate-menu ul {
+    margin: 5px 0px 5px 0px ;
+}
+
+/* Начало работы над правым фильтром */
+
+.right-menu {
+    background: linear-gradient(to top ,#78DBE2 57% , #FFFFFF 120%);
+    width: 140px;
+}
+
+.right-menu form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.right-menu form div {
+    width: 130px;
+}
+
+.errorlist {
+    list-style: none;
+}
+
+
+/* конец */
+
+
+
+
+/* Начало работы над квадратом в центре сайта ( тем самым в которые я ложу весь контент ) */
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    width: 1035px;
+    height: 800px;
+    margin: 60px auto;
+    background-color: rgb(235, 235, 235);
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 7px 10px rgba(255, 255, 255, 0.5);
+    overflow: auto;
+    border-radius: 10px;
+}
+
+#login-first-content {
+    width: 201px;
+    margin: 350px auto;
+}
+
+.login-content {
+    width: 230px;
+    height: 330px;
+    margin: 150px auto;
+}
+
+.login-content form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.registration-content {
+    width: 230px;
+    height: 500px;
+    margin: 150px auto;
+}
+
+.registration-content form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+/* Конец  */
+
+
+/* Задачи на main.html  */
+
+.borderless_completed {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #00ffff, #109010 180%);
+    padding : 15px ;
+    border: 3px solid SkyBlue;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.borderless_completed ul li, .borderless_uncompleted ul li {
+    transition: transform 0.3s ease;
+    list-style: none;
+    margin: 0px 5px 0px 5px;
+}
+
+.borderless_completed ul, .borderless_uncompleted ul {
+    display: flex;
+}
+
+
+.borderless_uncompleted {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #00ffff, #000000 180%);
+    padding : 15px ;
+    border: 3px solid SkyBlue;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ 
+.tasks_sum {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tasks_sum span {
+    border: 0.5px solid lightgrey;
+    background-color: #78DBE2;
+    box-shadow: 0 7px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+ 
+
+.no_tasks {
+    background-color: lightblue;
+    padding: 4px;
+    border: 2px solid SkyBlue;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Конец  */
+
+
+
+
+/* Детальный осмотр   */
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    width: 780px;
+    height: 800px;
+    margin: 60px auto;
+    background-color: rgb(235, 235, 235);
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 7px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+
+}
+
+
+.detailed_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.detailed_info {
+    margin-bottom: 20px;
+    padding: 0;
+    height: 685px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.buttons-navigate {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-navigate a {
+    margin: 0px 10px 0px 10px;
+}
+
+
+/* Конец  */
+
+
+
+
+/* Ниже стилизация заголовка действий */
+
+.action_title {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    user-select: none;
+}
+
+#signin_title {
+    background-color: #0dcaf0;
+    color: black;
+}
+
+#add_edit_title {
+    background-color: #198754;
+}
+
+#detail_title {
+    background-color: #ffc107;
+    color: black;
+    margin-top: 15px;
+}
+
+#edit_title {
+    background-color: #198754;
+}
+
+#delete_title {
+    background-color: red;
+}
+
+
+
+
+/* Редактирование - добавление - отдельный блок   */
+
+.content-add-edit {
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    width: 1010px;
+    height: auto;
+    min-height: 800px;
+    margin: 60px auto;
+    background-color: rgb(235, 235, 235);
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 7px 10px rgba(255, 255, 255, 0.5);
+    overflow: auto;
+    border-radius: 10px; 
+}
+
+
+.content-add-cat {
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    width: 710px;
+    height: auto;
+    min-height: 400px;
+    margin: 60px auto;
+    background-color: rgb(235, 235, 235);
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 7px 10px rgba(255, 255, 255, 0.5);
+    overflow: auto;
+    border-radius: 10px; 
+}
+
+
+.add-edit { 
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.add-edit a {
+    text-decoration: none;
+}
+
+
+.choice {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Конец  */
+
+
+
+
+/* Страница удаления !  */
+
+.delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1010px;
+    height: 570px;
+    margin: 60px auto; 
+}
+
+
+
+
+/* Страница регистрации !  */
+
+.register-form {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+/* Страница статистики о профиле !  */
+
+.profile {
+    display: flex;
+    width: 510px;
+    height: 402px;
+    margin: 60px auto;
+    background-color: rgb(235, 235, 235);
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 7px 10px rgba(255, 255, 255, 0.5);
+    overflow: auto;
+    border-radius: 10px; 
+}
+
+
+.profile-left-menu {
+    width: 110px;
+}
+
+
+.profile-left-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.profile-left-menu ul li {
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightgrey;
+}
+
+
+.profile-left-menu ul li a {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: black;
+    text-decoration: none;
+}
+
+
+.selected-action {
+    background-color: lightgrey;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+
+
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(235, 235, 235);
+    border: 0.5px solid lightgrey;
+
+}
+
+
+.profile-content-delete form {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.profile-edit form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile-edit form div i {
+    margin-right: 4px;
+}
+
+
+
+.statistics {
+    display: inline-block;
+    padding: 10px 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    user-select: none;
+}
+

@@ -1,0 +1,79 @@
+{% extends 'todos/main_temp.html' %}
+
+
+{% block title %}Main page{% endblock %}
+ 
+{% block content %}
+        {% if request.user.is_authenticated %}
+        <div class="content">
+            <div class="left-content">
+                {% if task %}
+                
+                    <div class="tasks_sum">
+                        <span> Tasks : {{ page_obj.paginator.count }} </span>
+                    </div>
+ 
+                    {% for i in task %}
+                        {% if i.completed %} 
+                            <div class="borderless_completed">
+                                <div>
+                                    <h3>{{ i.title|truncatechars:38 }}</h3> 
+                                    <p> <a href="{% url 'update' todo_id=i.id %}"> <button class="btn btn-success"> Completed </button></a> </p>
+                                </div>
+                                {% include 'includes/task.html' %}
+                            </div>
+                        {% else %}
+                            <div class="borderless_uncompleted">
+                                <div>
+                                    <h3>{{ i.title|truncatechars:38 }}</h3>
+                                    <p> <a href="{% url 'update' todo_id=i.id %}"> <button class="btn btn-danger">Uncompleted </button></a> </p>
+                                </div>
+                                {% include 'includes/task.html' %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                {% else %}
+                    <div class="no_tasks">
+                        <b>You dont have any Tasks</b>
+                    </div>
+                {% endif %}
+
+                {% if page_obj.has_other_pages %}
+                    <nav class="paginate-menu">
+                        <ul class="pagination">
+                            {% for p in paginator.page_range %}
+
+                                {% if page_obj.number == p %}
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#"> {{ p }} <span class="sr-only"></span></a>
+                                    </li>
+                                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ p }}&{{ params.urlencode }}"> {{ p }} </a> 
+                                    </li>
+                                {% endif %}
+
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {% else %}
+
+                {% endif %}
+
+            </div>
+            <div class="right-menu">
+                    <form method="get">
+                        <div class="form-group">
+                            {{ form.as_p }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </form> 
+            </div>
+        </div>
+        {% else %}
+        <div class="alert alert-danger" id="login-first-content">
+            <span>You need to sign in first</span>
+        </div>
+        {% endif %}
+{% endblock %}

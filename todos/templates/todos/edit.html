@@ -1,0 +1,23 @@
+{% extends 'todos/main_temp.html' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block content %}
+	<div class="content-add-edit">
+		<form method="post">
+			{% csrf_token %}
+			<div class="add-edit">
+                <h3 class="action_title" id="add_edit_title"> <i class="bi bi-pencil-square"></i> Edit</h3>
+        		{{ form.title }}
+                {{ form.slug }}
+                {{ form.description }}
+                <div>
+                    {{ form.completed.label }}
+                    {{ form.completed }}
+                </div>
+                {{ form.cat }}
+        		<button type="submit" class="btn btn-success">Save</button>
+            </div>
+		</form>
+	</div>
+{% endblock %}

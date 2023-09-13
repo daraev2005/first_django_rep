@@ -1,0 +1,5 @@
+<ul>
+    <li> <a href="{{ i.get_absolute_url }}"> <button class="btn btn-warning"> <i class="bi bi-view-list"></i> </button> </a> </li>
+    <li> <a href="{% url 'edit' edit_slug=i.slug %}"> <button class="btn btn-success"> <i class="bi bi-pencil-square"></i> </button> </a></li>
+    <li> <a href="{% url 'delete' delete_slug=i.slug %}"> <button class="btn btn-danger"> <i class="bi bi-trash"></i> </button> </a> </li>
+</ul>

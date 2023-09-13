@@ -1,0 +1,46 @@
+{% extends 'todos/main_temp.html' %}
+
+
+{% block title %}Profile{% endblock %}
+
+
+{% block content %}
+        <div class="profile">
+                <div class="profile-left-menu">
+                        <ul>    {% if cat == 0 %}
+                                        <li class="selected-action"> Statistics </li>
+                                {% else %}
+                                        <li> <a href="{% url 'profile_data' %}">Statistics</a> </li>
+                                {% endif %}
+                                {% if cat == 1 %}
+                                        <li class="selected-action"> Change details </li>
+                                {% else %}
+                                        <li> <a href="{% url 'profile_change' %}">Change details</a> </li>
+                                {% endif %}
+                                {% if cat == 2 %}
+                                        <li class="selected-action"> Delete </li>
+                                {% else %}
+                                        <li> <a href="{% url 'profile_delete' %}">Delete</a> </li>
+                                {% endif %}
+                        </ul>
+                </div>
+                <div class="profile-content">
+                        {% if cat == 0 %}
+                                <div class="statistics">
+                                        <h5>Completed tasks: {{ completed }}</h5>
+                                </div>
+                                <div class="statistics">
+                                        <h5>Uncompleted tasks: {{ uncompleted }}</h5>
+                                </div>
+                                <div class="statistics">
+                                        <h5>Profile registration date: {{ date_joined }}</h5>
+                                </div>
+                                <div class="statistics">
+                                        <h5>Categories: {{ categories }}</h5>
+                                </div>
+                        {% endif %}
+                        {% block profile-content %}
+                        {% endblock %}
+                </div>
+        </div>
+        {% endblock %}

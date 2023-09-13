@@ -1,0 +1,33 @@
+{% extends 'todos/main_temp.html' %}
+
+
+{% block title %}Auth page{% endblock %}
+ 
+{% block content %}
+<div class="login-content">
+	<form method="post" class="register-form">
+		{% csrf_token %}
+		<h3 class="action_title" id="signin_title"> <i class="bi bi-person-circle"></i> Sign in</h3>
+		<div>
+			<label class="form-label" for="{{ form.username.id_for_label }}"> <i class="bi bi-person-fill"></i> {{form.username.label}}: </label>{{ form.username }}
+			{% if form.username.errors %}
+				<div class="alert alert-danger" role="alert">{{ form.username.errors }}</div>
+			{% else %}
+			{% endif %}
+		</div>
+		<div>
+			<label class="form-label" for="{{ form.password.id_for_label }}"> <i class="bi bi-pencil-square"></i> {{form.password.label}}: </label>{{ form.password }}
+			{% if form.password.errors %}
+				<div class="alert alert-danger" role="alert">{{ form.password.errors }}</div>
+			{% else %}
+			{% endif %}
+		</div>
+		{% if form.non_field_errors %}
+				<div class="alert alert-danger" role="alert" > {{ form.non_field_errors }} </div>
+		{% else %}
+		{% endif %}
+		<button type="submit" class="btn btn-info">Sign in</button>
+	</form>
+</div>
+
+{% endblock %}

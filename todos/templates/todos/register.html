@@ -1,0 +1,43 @@
+{% extends 'todos/main_temp.html' %}
+
+
+{% block title %}Registration page{% endblock %}
+ 
+{% block content %}
+<div class="registration-content">
+	<form method="post" class="register-form">
+		{% csrf_token %}
+		<h3 class="action_title"> <i class="bi bi-box-arrow-in-right"></i> Sign up</h3>
+		<div>
+			<label class="form-label" for="{{ form.username.id_for_label }}"> <i class="bi bi-person-fill"></i> {{form.username.label}}: </label>{{ form.username }}
+			{% if form.username.errors %}
+				<div class="alert alert-danger" role="alert">{{ form.username.errors }}</div>
+			{% else %}
+			{% endif %}
+		</div>
+		<div>
+			<label class="form-label" for="{{ form.password1.id_for_label }}"> <i class="bi bi-pencil-square"></i> {{form.password1.label}}: </label>{{ form.password1 }}
+			{% if form.password1.errors %}
+				<div class="alert alert-danger" role="alert">{{ form.password1.errors }}</div>
+			{% else %}
+			{% endif %}
+		</div>
+		<div>
+			<label class="form-label" for="{{ form.password2.id_for_label }}"> <i class="bi bi-pencil-square"></i> {{form.password2.label}}: </label>{{ form.password2 }}
+			{% if form.password2.errors %}
+				<div class="alert alert-danger" role="alert">{{ form.password2.errors }}</div>
+			{% else %}
+			{% endif %}
+		</div>
+		<div>
+			<label class="form-label" for="{{ form.email.id_for_label }}"> <i class="bi bi-envelope-at-fill"></i> {{form.email.label}} : </label>{{ form.email }}
+			{% if form.email.errors %}
+				<div class="alert alert-danger" role="alert">{{ form.email.errors }}</div>
+			{% else %}
+			{% endif %}
+		</div>
+		<button type="submit" class="btn btn-primary">Sign up</button>
+	</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'todos/main_temp.html' %}
+
+
+{% block title %}Choice page{% endblock %}
+
+
+{% block content %}
+        <div class="content-add-cat">  
+        	<form method="post">
+        		{% csrf_token %}
+                        <div class="form-error">{{ form.non_field_errors }}</div>
+                        <div class="choice">
+                                <h3 class="action_title" id="delete_title"> Deleting a category</h3>
+                                <div class="alert alert-danger" role="alert">
+                                        Attention! This action will also delete all tasks associated with this category!
+                                </div>
+                                <div>
+                                      {{ form }}  
+                                </div>
+                                
+                                <button type="submit" class="btn btn-danger"> <i class="bi bi-trash"></i>Delete</button>
+                        </div>
+        	</form>
+        </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'todos/profile_data.html' %}
+
+{% block profile-content %}
+<div class="profile-content-delete">
+	<p>Are you sure you want to delete your {{ user.get_username }} profile?</p>
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Delete </button>
+	</form>
+</div>
+{% endblock %} 
